@@ -2,21 +2,21 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.Schedule" schema="public" table="schedule">
+  <class name="ip.dataaccess.Schedule" schema="public" table="schedule">
     <id name="id" type="int">
       <column name="id"/>
       <generator class="assigned"/>
     </id>
-    <many-to-one class="ip.Service" fetch="select" name="service">
+    <many-to-one class="ip.dataaccess.Service" fetch="select" name="service">
       <column name="service_id"/>
     </many-to-one>
-    <many-to-one class="ip.Staff" fetch="select" name="staffByDoctorId">
+    <many-to-one class="ip.dataaccess.Staff" fetch="select" name="staffByDoctorId">
       <column name="doctor_id"/>
     </many-to-one>
     <many-to-one class="ip.dataaccess.MedicalConsultation" fetch="select" name="medicalConsultation">
       <column name="medical_consultation_id"/>
     </many-to-one>
-    <many-to-one class="ip.Staff" fetch="select" name="staffByNurseId">
+    <many-to-one class="ip.dataaccess.Staff" fetch="select" name="staffByNurseId">
       <column name="nurse_id"/>
     </many-to-one>
     <property name="serviceRenderingDate" type="date">

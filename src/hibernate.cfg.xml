@@ -7,18 +7,19 @@
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/infirmary</property>
     <property name="hibernate.connection.username">chief_medical_officer</property>
     <property name="hibernate.connection.password">chmo</property>
-    <mapping resource="ip.dataaccess/ServicePrice.hbm.xml"/>
-    <mapping resource="ip.dataaccess/StaffPosition.hbm.xml"/>
-    <mapping resource="ip.dataaccess/SupplementalHealthInsurance.hbm.xml"/>
-    <mapping resource="ip.dataaccess/Service.hbm.xml"/>
-    <mapping resource="ip.dataaccess/Schedule.hbm.xml"/>
-    <mapping resource="ip.dataaccess/Staff.hbm.xml"/>
-    <mapping resource="ip.dataaccess/Payer.hbm.xml"/>
-    <mapping resource="ip/Agent.hbm.xml"/>
-    <mapping resource="ip/Patient.hbm.xml"/>
-    <mapping resource="ip.dataaccess/SystemUser.hbm.xml"/>
-    <mapping resource="ip/MedicalConsultation.hbm.xml"/>
-    <mapping resource="ip.dataaccess/PaymentMethod.hbm.xml"/>
-    <mapping resource="ip/InsuranceCompany.hbm.xml"/>
+    <property name="hibernate.show_sql">true</property>
+    <mapping resource="ip/dataaccess/ServicePrice.hbm.xml"/>
+    <mapping resource="ip/dataaccess/StaffPosition.hbm.xml"/>
+    <mapping resource="ip/dataaccess/SupplementalHealthInsurance.hbm.xml"/>
+    <mapping resource="ip/dataaccess/Service.hbm.xml"/>
+    <mapping resource="ip/dataaccess/Schedule.hbm.xml"/>
+    <mapping resource="ip/dataaccess/Staff.hbm.xml"/>
+    <mapping resource="ip/dataaccess/Payer.hbm.xml"/>
+    <mapping resource="ip/dataaccess/Agent.hbm.xml"/>
+    <mapping resource="ip/dataaccess/Patient.hbm.xml"/>
+    <mapping resource="ip/dataaccess/SystemUser.hbm.xml"/>
+    <mapping resource="ip/dataaccess/MedicalConsultation.hbm.xml"/>
+    <mapping resource="ip/dataaccess/PaymentMethod.hbm.xml"/>
+    <mapping resource="ip/dataaccess/InsuranceCompany.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

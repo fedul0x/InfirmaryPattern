@@ -7,22 +7,22 @@
       <column name="id"/>
       <generator class="assigned"/>
     </id>
-    <many-to-one class="ip.ServicePrice" fetch="select" name="servicePrice">
+    <many-to-one class="ip.dataaccess.ServicePrice" fetch="select" name="servicePrice">
       <column name="service_price_id"/>
     </many-to-one>
-    <many-to-one class="ip.Service" fetch="select" name="service">
+    <many-to-one class="ip.dataaccess.Service" fetch="select" name="service">
       <column name="repeat_survey_id"/>
     </many-to-one>
-    <many-to-one class="ip.SystemUser" fetch="select" name="systemUser">
+    <many-to-one class="ip.dataaccess.SystemUser" fetch="select" name="systemUser">
       <column name="system_user_id"/>
     </many-to-one>
-    <many-to-one class="ip.PaymentMethod" fetch="select" name="paymentMethod">
+    <many-to-one class="ip.dataaccess.PaymentMethod" fetch="select" name="paymentMethod">
       <column name="payment_method_id"/>
     </many-to-one>
-    <many-to-one class="ip.Payer" fetch="select" name="payer">
+    <many-to-one class="ip.dataaccess.Payer" fetch="select" name="payer">
       <column name="payer_id"/>
     </many-to-one>
-    <many-to-one class="ip.Patient" fetch="select" name="patient">
+    <many-to-one class="ip.dataaccess.Patient" fetch="select" name="patient">
       <column name="patient_id"/>
     </many-to-one>
     <many-to-one class="ip.dataaccess.Agent" fetch="select" name="agent">
@@ -53,7 +53,7 @@
       <key>
         <column name="medical_consultation_id"/>
       </key>
-      <one-to-many class="ip.Schedule"/>
+      <one-to-many class="ip.dataaccess.Schedule"/>
     </set>
   </class>
 </hibernate-mapping>

@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.Service" schema="public" table="service">
+  <class name="ip.dataaccess.Service" schema="public" table="service">
     <id name="id" type="int">
       <column name="id"/>
       <generator class="assigned"/>
@@ -26,13 +26,13 @@
       <key>
         <column name="service_id"/>
       </key>
-      <one-to-many class="ip.ServicePrice"/>
+      <one-to-many class="ip.dataaccess.ServicePrice"/>
     </set>
     <set inverse="true" name="schedules">
       <key>
         <column name="service_id"/>
       </key>
-      <one-to-many class="ip.Schedule"/>
+      <one-to-many class="ip.dataaccess.Schedule"/>
     </set>
     <set inverse="true" name="medicalConsultations">
       <key>
