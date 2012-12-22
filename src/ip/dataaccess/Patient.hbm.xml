@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="ip.Patient" schema="public" table="patient">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="ip.SupplementalHealthInsurance" fetch="select" name="supplementalHealthInsurance">
+      <column name="supplemental_health_insurance_id"/>
+    </many-to-one>
+    <property name="firstName" type="string">
+      <column name="first_name"/>
+    </property>
+    <property name="lastName" type="string">
+      <column name="last_name"/>
+    </property>
+    <property name="middleName" type="string">
+      <column name="middle_name"/>
+    </property>
+    <property name="birthdayDate" type="date">
+      <column length="13" name="birthday_date"/>
+    </property>
+    <property name="registrationDate" type="date">
+      <column length="13" name="registration_date"/>
+    </property>
+    <property name="sex" type="java.lang.Boolean">
+      <column name="sex"/>
+    </property>
+    <property name="state" type="string">
+      <column name="state"/>
+    </property>
+    <property name="town" type="string">
+      <column name="town"/>
+    </property>
+    <property name="district" type="string">
+      <column name="district"/>
+    </property>
+    <property name="street" type="string">
+      <column name="street"/>
+    </property>
+    <property name="building" type="string">
+      <column name="building"/>
+    </property>
+    <property name="flat" type="string">
+      <column name="flat"/>
+    </property>
+    <property name="home" type="string">
+      <column name="home"/>
+    </property>
+    <property name="workplace" type="string">
+      <column name="workplace"/>
+    </property>
+    <property name="homePhone" type="string">
+      <column name="home_phone"/>
+    </property>
+    <property name="mobilePhone" type="string">
+      <column name="mobile_phone"/>
+    </property>
+    <property name="workPhone" type="string">
+      <column name="work_phone"/>
+    </property>
+    <property name="medicalInsuranceSeries" type="string">
+      <column length="10" name="medical_insurance_series"/>
+    </property>
+    <property name="medicalInsuranceNumber" type="string">
+      <column length="20" name="medical_insurance_number"/>
+    </property>
+    <property name="contractTermEnding" type="date">
+      <column length="13" name="contract_term_ending"/>
+    </property>
+    <property name="contractValidityBeginning" type="date">
+      <column length="13" name="contract_validity_beginning"/>
+    </property>
+    <property name="medicalCardNumber" type="string">
+      <column length="15" name="medical_card_number"/>
+    </property>
+    <property name="medicalCardDate" type="date">
+      <column length="13" name="medical_card_date"/>
+    </property>
+    <set inverse="true" name="medicalConsultations">
+      <key>
+        <column name="patient_id"/>
+      </key>
+      <one-to-many class="ip.dataaccess.MedicalConsultation"/>
+    </set>
+  </class>
+</hibernate-mapping>

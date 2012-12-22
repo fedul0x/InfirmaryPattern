@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="ip.ServicePrice" schema="public" table="service_price">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="ip.Service" fetch="select" name="service">
+      <column name="service_id"/>
+    </many-to-one>
+    <many-to-one class="ip.SupplementalHealthInsurance" fetch="select" name="supplementalHealthInsurance">
+      <column name="supplemental_health_insurance_id"/>
+    </many-to-one>
+    <property name="price" type="big_decimal">
+      <column name="price" precision="131089" scale="0"/>
+    </property>
+    <property name="fotDoc" type="java.lang.Double">
+      <column name="fot_doc" precision="17" scale="17"/>
+    </property>
+    <property name="fotMs" type="java.lang.Double">
+      <column name="fot_ms" precision="17" scale="17"/>
+    </property>
+    <set inverse="true" name="medicalConsultations">
+      <key>
+        <column name="service_price_id"/>
+      </key>
+      <one-to-many class="ip.dataaccess.MedicalConsultation"/>
+    </set>
+  </class>
+</hibernate-mapping>

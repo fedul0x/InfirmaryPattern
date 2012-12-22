@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="infirmary" match-schema="public"/>
+  <table-filter match-name="agent"/>
+  <table-filter match-name="staff_position"/>
+  <table-filter match-name="payment_method"/>
+  <table-filter match-name="staff"/>
+  <table-filter match-name="medical_consultation"/>
+  <table-filter match-name="service"/>
+  <table-filter match-name="insurance_company"/>
+  <table-filter match-name="supplemental_health_insurance"/>
+  <table-filter match-name="system_user"/>
+  <table-filter match-name="payer"/>
+  <table-filter match-name="schedule"/>
+  <table-filter match-name="patient"/>
+  <table-filter match-name="service_price"/>
+</hibernate-reverse-engineering>

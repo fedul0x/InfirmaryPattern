@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="ip.Service" schema="public" table="service">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="serviceName" type="string">
+      <column name="service_name"/>
+    </property>
+    <property name="serviceCodeMajor" type="java.lang.Short">
+      <column name="service_code_major"/>
+    </property>
+    <property name="serviceCodeMinor" type="java.lang.Short">
+      <column name="service_code_minor"/>
+    </property>
+    <property name="timeSpent" type="java.lang.Short">
+      <column name="time_spent"/>
+    </property>
+    <property name="monthlyNorm" type="java.lang.Double">
+      <column name="monthly_norm" precision="17" scale="17"/>
+    </property>
+    <set inverse="true" name="servicePrices">
+      <key>
+        <column name="service_id"/>
+      </key>
+      <one-to-many class="ip.ServicePrice"/>
+    </set>
+    <set inverse="true" name="schedules">
+      <key>
+        <column name="service_id"/>
+      </key>
+      <one-to-many class="ip.Schedule"/>
+    </set>
+    <set inverse="true" name="medicalConsultations">
+      <key>
+        <column name="repeat_survey_id"/>
+      </key>
+      <one-to-many class="ip.dataaccess.MedicalConsultation"/>
+    </set>
+  </class>
+</hibernate-mapping>

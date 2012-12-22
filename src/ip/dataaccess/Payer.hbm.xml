@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="ip.Payer" schema="public" table="payer">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="firstName" type="string">
+      <column name="first_name"/>
+    </property>
+    <property name="lastName" type="string">
+      <column name="last_name"/>
+    </property>
+    <property name="middleName" type="string">
+      <column name="middle_name"/>
+    </property>
+    <property name="birthdayDate" type="date">
+      <column length="13" name="birthday_date"/>
+    </property>
+    <property name="passportNumber" type="string">
+      <column length="6" name="passport_number"/>
+    </property>
+    <property name="passportSeries" type="string">
+      <column length="4" name="passport_series"/>
+    </property>
+    <property name="passportIssuedBy" type="string">
+      <column length="100" name="passport_issued_by"/>
+    </property>
+    <set inverse="true" name="medicalConsultations">
+      <key>
+        <column name="payer_id"/>
+      </key>
+      <one-to-many class="ip.dataaccess.MedicalConsultation"/>
+    </set>
+  </class>
+</hibernate-mapping>
