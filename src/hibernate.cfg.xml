@@ -8,6 +8,8 @@
     <property name="hibernate.connection.username">chief_medical_officer</property>
     <property name="hibernate.connection.password">chmo</property>
     <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping resource="ip/dataaccess/ServicePrice.hbm.xml"/>
     <mapping resource="ip/dataaccess/StaffPosition.hbm.xml"/>
     <mapping resource="ip/dataaccess/SupplementalHealthInsurance.hbm.xml"/>

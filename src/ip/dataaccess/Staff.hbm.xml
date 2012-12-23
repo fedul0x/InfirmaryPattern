@@ -5,7 +5,7 @@
   <class name="ip.dataaccess.Staff" schema="public" table="staff">
     <id name="id" type="int">
       <column name="id"/>
-      <generator class="assigned"/>
+      <generator class="native"/>
     </id>
     <many-to-one class="ip.dataaccess.StaffPosition" fetch="select" name="staffPosition">
       <column name="staff_position_id"/>
