@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.dataaccess.Staff" schema="public" table="staff">
+  <class name="ip.dataaccess.dataobject.Staff" schema="public" table="staff">
     <id name="id" type="int">
       <column name="id"/>
       <generator class="native"/>
     </id>
-    <many-to-one class="ip.dataaccess.StaffPosition" fetch="select" name="staffPosition">
+    <many-to-one class="ip.dataaccess.dataobject.StaffPosition" fetch="select" name="staffPosition">
       <column name="staff_position_id"/>
     </many-to-one>
     <property name="lastName" type="string">
@@ -56,19 +56,19 @@
       <key>
         <column name="nurse_id"/>
       </key>
-      <one-to-many class="ip.dataaccess.Schedule"/>
+      <one-to-many class="ip.dataaccess.dataobject.Schedule"/>
     </set>
     <set inverse="true" name="schedulesForDoctorId">
       <key>
         <column name="doctor_id"/>
       </key>
-      <one-to-many class="ip.dataaccess.Schedule"/>
+      <one-to-many class="ip.dataaccess.dataobject.Schedule"/>
     </set>
     <set inverse="true" name="systemUsers">
       <key>
         <column name="staff"/>
       </key>
-      <one-to-many class="ip.dataaccess.SystemUser"/>
+      <one-to-many class="ip.dataaccess.dataobject.SystemUser"/>
     </set>
   </class>
 </hibernate-mapping>

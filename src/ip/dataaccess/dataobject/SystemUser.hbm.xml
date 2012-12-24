@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.dataaccess.SystemUser" schema="public" table="system_user">
+  <class name="ip.dataaccess.dataobject.SystemUser" schema="public" table="system_user">
     <id name="id" type="int">
       <column name="id"/>
       <generator class="assigned"/>
     </id>
-    <many-to-one class="ip.dataaccess.Staff" fetch="select" name="staff">
+    <many-to-one class="ip.dataaccess.dataobject.Staff" fetch="select" name="staff">
       <column name="staff"/>
     </many-to-one>
     <property name="login" type="string">
@@ -20,7 +20,7 @@
       <key>
         <column name="system_user_id"/>
       </key>
-      <one-to-many class="ip.dataaccess.MedicalConsultation"/>
+      <one-to-many class="ip.dataaccess.dataobject.MedicalConsultation"/>
     </set>
   </class>
 </hibernate-mapping>

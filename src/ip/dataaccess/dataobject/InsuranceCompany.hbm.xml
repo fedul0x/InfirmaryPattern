@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.dataaccess.InsuranceCompany" schema="public" table="insurance_company">
+  <class name="ip.dataaccess.dataobject.InsuranceCompany" schema="public" table="insurance_company">
     <id name="id" type="int">
       <column name="id"/>
       <generator class="assigned"/>

@@ -4,7 +4,7 @@
  */
 package ip;
 
-import ip.dataaccess.Agent;
+import ip.dataaccess.dataobject.Agent;
 import ip.dataaccess.HibernateUtil;
 import ip.dataaccess.StaffPosition;
 import org.hibernate.classic.Session;

@@ -1,4 +1,4 @@
-package ip.dataaccess;
+package ip.dataaccess.dataobject;
 // Generated 23.12.2012 2:11:14 by Hibernate Tools 3.2.1.GA
 
 

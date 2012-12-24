@@ -2,30 +2,30 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.dataaccess.MedicalConsultation" schema="public" table="medical_consultation">
+  <class name="ip.dataaccess.dataobject.MedicalConsultation" schema="public" table="medical_consultation">
     <id name="id" type="int">
       <column name="id"/>
       <generator class="assigned"/>
     </id>
-    <many-to-one class="ip.dataaccess.ServicePrice" fetch="select" name="servicePrice">
+    <many-to-one class="ip.dataaccess.dataobject.ServicePrice" fetch="select" name="servicePrice">
       <column name="service_price_id"/>
     </many-to-one>
-    <many-to-one class="ip.dataaccess.Service" fetch="select" name="service">
+    <many-to-one class="ip.dataaccess.dataobject.Service" fetch="select" name="service">
       <column name="repeat_survey_id"/>
     </many-to-one>
-    <many-to-one class="ip.dataaccess.SystemUser" fetch="select" name="systemUser">
+    <many-to-one class="ip.dataaccess.dataobject.SystemUser" fetch="select" name="systemUser">
       <column name="system_user_id"/>
     </many-to-one>
-    <many-to-one class="ip.dataaccess.PaymentMethod" fetch="select" name="paymentMethod">
+    <many-to-one class="ip.dataaccess.dataobject.PaymentMethod" fetch="select" name="paymentMethod">
       <column name="payment_method_id"/>
     </many-to-one>
-    <many-to-one class="ip.dataaccess.Payer" fetch="select" name="payer">
+    <many-to-one class="ip.dataaccess.dataobject.Payer" fetch="select" name="payer">
       <column name="payer_id"/>
     </many-to-one>
-    <many-to-one class="ip.dataaccess.Patient" fetch="select" name="patient">
+    <many-to-one class="ip.dataaccess.dataobject.Patient" fetch="select" name="patient">
       <column name="patient_id"/>
     </many-to-one>
-    <many-to-one class="ip.dataaccess.Agent" fetch="select" name="agent">
+    <many-to-one class="ip.dataaccess.dataobject.Agent" fetch="select" name="agent">
       <column name="agent_id"/>
     </many-to-one>
     <property name="registrationDate" type="date">
@@ -53,7 +53,7 @@
       <key>
         <column name="medical_consultation_id"/>
       </key>
-      <one-to-many class="ip.dataaccess.Schedule"/>
+      <one-to-many class="ip.dataaccess.dataobject.Schedule"/>
     </set>
   </class>
 </hibernate-mapping>

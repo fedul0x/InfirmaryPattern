@@ -2,22 +2,22 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class name="ip.dataaccess.StaffPosition" schema="public" table="staff_position">
-    <id name="id" type="long">
+  <class name="ip.dataaccess.dataobject.PaymentMethod" schema="public" table="payment_method">
+    <id name="id" type="int">
       <column name="id"/>
       <generator class="assigned"/>
     </id>
-    <property name="staffPositionName" type="string">
-      <column name="staff_position_name"/>
+    <property name="paymentMethodName" type="string">
+      <column name="payment_method_name"/>
     </property>
     <property name="description" type="string">
       <column name="description"/>
     </property>
-<!--    <set inverse="true" name="staffs">
+    <set inverse="true" name="medicalConsultations">
       <key>
-        <column name="staff_position_id"/>
+        <column name="payment_method_id"/>
       </key>
-      <one-to-many class="ip.dataaccess.Staff"/>
-    </set>-->
+      <one-to-many class="ip.dataaccess.dataobject.MedicalConsultation"/>
+    </set>
   </class>
 </hibernate-mapping>
