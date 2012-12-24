@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 23.12.2012 2:11:15 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="ru.fedul0x.ip.dataaccess.dataobject.MedicalConsultation" schema="public" table="medical_consultation">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.ServicePrice" fetch="select" name="servicePrice">
+      <column name="service_price_id"/>
+    </many-to-one>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.Service" fetch="select" name="service">
+      <column name="repeat_survey_id"/>
+    </many-to-one>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.SystemUser" fetch="select" name="systemUser">
+      <column name="system_user_id"/>
+    </many-to-one>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.PaymentMethod" fetch="select" name="paymentMethod">
+      <column name="payment_method_id"/>
+    </many-to-one>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.Payer" fetch="select" name="payer">
+      <column name="payer_id"/>
+    </many-to-one>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.Patient" fetch="select" name="patient">
+      <column name="patient_id"/>
+    </many-to-one>
+    <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.Agent" fetch="select" name="agent">
+      <column name="agent_id"/>
+    </many-to-one>
+    <property name="registrationDate" type="date">
+      <column length="13" name="registration_date"/>
+    </property>
+    <property name="isPrimarySurveyType" type="java.lang.Boolean">
+      <column name="is_primary_survey_type"/>
+    </property>
+    <property name="isPrintedServiceDocument" type="java.lang.Boolean">
+      <column name="is_printed_service_document"/>
+    </property>
+    <property name="repeatSurveyDate" type="date">
+      <column length="13" name="repeat_survey_date"/>
+    </property>
+    <property name="repeatSurveyDocument" type="string">
+      <column name="repeat_survey_document"/>
+    </property>
+    <property name="priceList" type="string">
+      <column length="50" name="price_list"/>
+    </property>
+    <property name="endSubscriptionDate" type="date">
+      <column length="13" name="end_subscription_date"/>
+    </property>
+    <set inverse="true" name="schedules">
+      <key>
+        <column name="medical_consultation_id"/>
+      </key>
+      <one-to-many class="ru.fedul0x.ip.dataaccess.dataobject.Schedule"/>
+    </set>
+  </class>
+</hibernate-mapping>

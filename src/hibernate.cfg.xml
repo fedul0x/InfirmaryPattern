@@ -10,18 +10,18 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping resource="ip/dataaccess/ServicePrice.hbm.xml"/>
-    <mapping resource="ip/dataaccess/StaffPosition.hbm.xml"/>
-    <mapping resource="ip/dataaccess/SupplementalHealthInsurance.hbm.xml"/>
-    <mapping resource="ip/dataaccess/Service.hbm.xml"/>
-    <mapping resource="ip/dataaccess/Schedule.hbm.xml"/>
-    <mapping resource="ip/dataaccess/Staff.hbm.xml"/>
-    <mapping resource="ip/dataaccess/Payer.hbm.xml"/>
-    <mapping resource="ip/dataaccess/Agent.hbm.xml"/>
-    <mapping resource="ip/dataaccess/Patient.hbm.xml"/>
-    <mapping resource="ip/dataaccess/SystemUser.hbm.xml"/>
-    <mapping resource="ip/dataaccess/MedicalConsultation.hbm.xml"/>
-    <mapping resource="ip/dataaccess/PaymentMethod.hbm.xml"/>
-    <mapping resource="ip/dataaccess/InsuranceCompany.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/ServicePrice.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/StaffPosition.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/SupplementalHealthInsurance.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/Service.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/Schedule.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/Staff.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/Payer.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/Agent.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/Patient.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/SystemUser.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/MedicalConsultation.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/PaymentMethod.hbm.xml"/>
+    <mapping resource="ru/fedul0x/ip/dataaccess/InsuranceCompany.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
