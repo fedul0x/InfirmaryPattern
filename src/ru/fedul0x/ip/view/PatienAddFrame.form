@@ -264,26 +264,23 @@
     <Component class="javax.swing.JFormattedTextField" name="contractTermEndingFormattedTextField">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="0" type="1"/>
+          <Format format="dd MMMM yyyy, EEEE" subtype="-1" type="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="contractTermEndingFormattedTextField"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DateFormat date = new SimpleDateFormat(&quot;dd MMMM yyyy, EEEE&quot;);&#xa;DateFormatter formatter = new DateFormatter(date);&#xa;formatter.setAllowsInvalid(false);&#xa;formatter.setOverwriteMode(true);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="birthdayDateFormattedTextField.setColumns(15);&#xa;birthdayDateFormattedTextField.setValue(new Date());"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="contractTermEndingFormattedTextField.setColumns(15);&#xa;contractTermEndingFormattedTextField.setValue(new Date());"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="contractValidityBeginningFormattedTextField">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="0" type="1"/>
+          <Format format="dd MMMM yyyy, EEEE" subtype="-1" type="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="contractValidityBeginningFormattedTextField"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="registrationDateFormattedTextField.setColumns(15);&#xa;registrationDateFormattedTextField.setValue(new Date());"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="contractValidityBeginningFormattedTextField.setColumns(15);&#xa;contractValidityBeginningFormattedTextField.setValue(new Date());"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="medicalCardNumberTextField">
@@ -297,17 +294,15 @@
     <Component class="javax.swing.JFormattedTextField" name="medicalCardDateFormattedTextField">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="0" type="1"/>
+          <Format format="dd MMMM yyyy, EEEE" subtype="-1" type="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="medicalCardDateFormattedTextField"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalCardDateFormattedTextFieldActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DateFormat date = new SimpleDateFormat(&quot;dd MMMM yyyy, EEEE&quot;);&#xa;DateFormatter formatter = new DateFormatter(date);&#xa;formatter.setAllowsInvalid(false);&#xa;formatter.setOverwriteMode(true);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="birthdayDateFormattedTextField.setColumns(15);&#xa;birthdayDateFormattedTextField.setValue(new Date());"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="medicalCardDateFormattedTextField.setColumns(15);&#xa;medicalCardDateFormattedTextField.setValue(new Date());"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="addEntityButton">

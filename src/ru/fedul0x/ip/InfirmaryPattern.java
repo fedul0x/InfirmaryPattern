@@ -36,6 +36,9 @@ public class InfirmaryPattern {
 //        DataSourceHibernate<StaffPosition> sf = new DataSourceHibernate<StaffPosition>();
 //        sf.makePersistent(staffPositionChiefDoctor);
 //        sf.makeTransient(staffPositionChiefDoctor);
+        
+        
+        
 
         PatienAddFrame frame = new PatienAddFrame();
         frame.setVisible(true);

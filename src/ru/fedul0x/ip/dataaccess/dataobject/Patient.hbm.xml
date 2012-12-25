@@ -5,7 +5,7 @@
   <class name="ru.fedul0x.ip.dataaccess.dataobject.Patient" schema="public" table="patient">
     <id name="id" type="long">
       <column name="id"/>
-      <generator class="assigned"/>
+      <generator class="native"/>
     </id>
     <many-to-one class="ru.fedul0x.ip.dataaccess.dataobject.SupplementalHealthInsurance" fetch="select" name="supplementalHealthInsurance">
       <column name="supplemental_health_insurance_id"/>

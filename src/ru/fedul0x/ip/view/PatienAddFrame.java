@@ -16,11 +16,17 @@
 package ru.fedul0x.ip.view;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
 import javax.swing.text.DateFormatter;
+import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
+import ru.fedul0x.ip.dataaccess.DataSourceRepository;
 import ru.fedul0x.ip.dataaccess.dataobject.Patient;
+import ru.fedul0x.ip.view.component.SexComboBoxModel;
 
 /**
  *
@@ -68,17 +74,9 @@ public class PatienAddFrame extends javax.swing.JFrame {
         workPhoneTextField = new javax.swing.JTextField();
         medicalInsuranceNumberTextField = new javax.swing.JTextField();
         medicalInsuranceSeriesTextField = new javax.swing.JTextField();
-        DateFormat date = new SimpleDateFormat("dd MMMM yyyy, EEEE");
-        DateFormatter formatter = new DateFormatter(date);
-        formatter.setAllowsInvalid(false);
-        formatter.setOverwriteMode(true);
         contractTermEndingFormattedTextField = new javax.swing.JFormattedTextField(formatter);
         contractValidityBeginningFormattedTextField = new javax.swing.JFormattedTextField(formatter);
         medicalCardNumberTextField = new javax.swing.JTextField();
-        DateFormat date = new SimpleDateFormat("dd MMMM yyyy, EEEE");
-        DateFormatter formatter = new DateFormatter(date);
-        formatter.setAllowsInvalid(false);
-        formatter.setOverwriteMode(true);
         medicalCardDateFormattedTextField = new javax.swing.JFormattedTextField(formatter);
         addEntityButton = new javax.swing.JButton();
 
@@ -150,15 +148,13 @@ public class PatienAddFrame extends javax.swing.JFrame {
 
         medicalInsuranceSeriesTextField.setText("medicalInsuranceSeriesTextField");
 
-        birthdayDateFormattedTextField.setColumns(15);
-        birthdayDateFormattedTextField.setValue(new Date());
-        contractTermEndingFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        contractTermEndingFormattedTextField.setText("contractTermEndingFormattedTextField");
+        contractTermEndingFormattedTextField.setColumns(15);
+        contractTermEndingFormattedTextField.setValue(new Date());
+        contractTermEndingFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MMMM yyyy, EEEE"))));
 
-        registrationDateFormattedTextField.setColumns(15);
-        registrationDateFormattedTextField.setValue(new Date());
-        contractValidityBeginningFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        contractValidityBeginningFormattedTextField.setText("contractValidityBeginningFormattedTextField");
+        contractValidityBeginningFormattedTextField.setColumns(15);
+        contractValidityBeginningFormattedTextField.setValue(new Date());
+        contractValidityBeginningFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MMMM yyyy, EEEE"))));
 
         medicalCardNumberTextField.setText("medicalCardNumberTextField");
         medicalCardNumberTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -167,10 +163,9 @@ public class PatienAddFrame extends javax.swing.JFrame {
             }
         });
 
-        birthdayDateFormattedTextField.setColumns(15);
-        birthdayDateFormattedTextField.setValue(new Date());
-        medicalCardDateFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-        medicalCardDateFormattedTextField.setText("medicalCardDateFormattedTextField");
+        medicalCardDateFormattedTextField.setColumns(15);
+        medicalCardDateFormattedTextField.setValue(new Date());
+        medicalCardDateFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MMMM yyyy, EEEE"))));
         medicalCardDateFormattedTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 medicalCardDateFormattedTextFieldActionPerformed(evt);
@@ -314,40 +309,49 @@ public class PatienAddFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_medicalCardNumberTextFieldActionPerformed
 
     private void addEntityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEntityButtonActionPerformed
-        // TODO add your handling code here:
-        DateFormat format = new SimpleDateFormat("dd MMMM yyyy, EEEE");
-        Date bd = format.parse((String) birthdayDateFormattedTextField.getValue());
-        Date rd = format.parse((String) registrationDateFormattedTextField.getValue());
-        Date cte = format.parse((String) contractTermEndingFormattedTextField.getValue());
+        try {
+            // TODO add your handling code here:
+            DateFormat format = new SimpleDateFormat("dd MMMM yyyy, EEEE");
+            Date bd = format.parse((String) birthdayDateFormattedTextField.getText());
+            Date rd = format.parse((String) registrationDateFormattedTextField.getText());
+            Date cte = format.parse((String) contractTermEndingFormattedTextField.getText());
 
-        Date cvb = format.parse((String) contractValidityBeginningFormattedTextField.getValue());
-        Date mcd = format.parse((String) medicalCardDateFormattedTextField.getValue());
+            Date cvb = format.parse((String) contractValidityBeginningFormattedTextField.getText());
+            Date mcd = format.parse((String) medicalCardDateFormattedTextField.getText());
 
-        Patient patient = new Patient();
-        patient.setFirstName(firstNameTextField.getText());
-        patient.setLastName(lastNameTextField.getText());
-        patient.setMiddleName(middleNameTextField.getText());
-        patient.setBirthdayDate(bd);
-        patient.setRegistrationDate(rd);
-//TODO correct this error
-        patient.setSex(false);
-        patient.setState(stateTextField.getText());
-        patient.setTown(townTextField.getText());
-        patient.setDistrict(districtTextField.getText());
-        patient.setStreet(streetTextField.getText());
-        patient.setBuilding(buildingTextField.getText());
-        patient.setFlat(flatTextField.getText());
-        patient.setHome(homeTextField.getText());
-        patient.setWorkplace(workplaceTextField.getText());
-        patient.setHomePhone(homePhoneTextField.getText());
-        patient.setMobilePhone(mobilePhoneTextField.getText());
-        patient.setWorkPhone(workPhoneTextField.getText());
-        patient.setMedicalInsuranceSeries(medicalInsuranceSeriesTextField.getText());
-        patient.setMedicalInsuranceNumber(medicalInsuranceNumberTextField.getText());
-        patient.setContractTermEnding(cte);
-        patient.setContractValidityBeginning(cvb);
-        patient.setMedicalCardNumber(medicalCardNumberTextField.getText());
-        patient.setMedicalCardDate(mcd);
+            Patient patient = new Patient(2L);
+            patient.setFirstName(firstNameTextField.getText());
+            patient.setLastName(lastNameTextField.getText());
+            patient.setMiddleName(middleNameTextField.getText());
+            patient.setBirthdayDate(bd);
+            patient.setRegistrationDate(rd);
+    //TODO correct this error
+            patient.setSex(false);
+            patient.setSex(((SexComboBoxModel)sexComboBox.getModel()).getValue());
+            patient.setState(stateTextField.getText());
+            patient.setTown(townTextField.getText());
+            patient.setDistrict(districtTextField.getText());
+            patient.setStreet(streetTextField.getText());
+            patient.setBuilding(buildingTextField.getText());
+            patient.setFlat(flatTextField.getText());
+            patient.setHome(homeTextField.getText());
+            patient.setWorkplace(workplaceTextField.getText());
+            patient.setHomePhone(homePhoneTextField.getText());
+            patient.setMobilePhone(mobilePhoneTextField.getText());
+            patient.setWorkPhone(workPhoneTextField.getText());
+            patient.setMedicalInsuranceSeries(medicalInsuranceSeriesTextField.getText());
+            patient.setMedicalInsuranceNumber(medicalInsuranceNumberTextField.getText());
+            patient.setContractTermEnding(cte);
+            patient.setContractValidityBeginning(cvb);
+            patient.setMedicalCardNumber(medicalCardNumberTextField.getText());
+            patient.setMedicalCardDate(mcd);
+//            DataSourceRepository.getDataSource(Patient.class).makePersistent(patient);
+            DataSourceHibernate<Patient> dsh = new DataSourceHibernate<Patient>();
+            dsh.makePersistent(patient);
+            dsh.flush();
+        } catch (ParseException ex) {
+            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_addEntityButtonActionPerformed
 
     private void medicalCardDateFormattedTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalCardDateFormattedTextFieldActionPerformed

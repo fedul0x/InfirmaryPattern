@@ -49,6 +49,10 @@ public class SexComboBoxModel<String> implements ComboBoxModel<String> {
         }
         return result;
     }
+    
+    public Boolean getValue(){
+        return selectedItem;
+    }
 
     @Override
     public int getSize() {

@@ -16,10 +16,28 @@
 
 package ru.fedul0x.ip.dataaccess;
 
+import ru.fedul0x.ip.dataaccess.dataobject.Patient;
+
 /**
  *
  * @author Ivashin Alexey <ivashin.alexei@gmail.com>
  */
 public class DataSourceRepository {
+
+//    private DataSourceRepository INSTANCE = new DataSourceRepository();
+//
+//    public DataSourceRepository getInstance() {
+//        return INSTANCE;
+//    }
+    
+    public static DataSourceHibernate<? extends DataEntity> getDataSource(Class type){
+        System.out.println(type.getGenericInterfaces()[0]);
+//        DataSourceHibernate<type> dsh = new DataSourceHibernate<type>();
+        DataSourceHibernate<Patient> dsh = new DataSourceHibernate<Patient>();
+        return (DataSourceHibernate<Patient>)dsh;
+    }
+    
+    private DataSourceRepository() {
+    }
 
 }
