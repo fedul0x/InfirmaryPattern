@@ -29,10 +29,8 @@ public interface DataSource<T extends DataEntity> {
     List<T> findAll();
 
     List<T> findByExample(T exampleInstance, String[] excludeProperty);
-//    TODO What is it?
 
-//    T makePersistent(T entity);
-//    TODO What is it?
+    T makePersistent(T entity);
 
-//    void makeTransient(T entity);
+    void makeTransient(T entity);
 }

@@ -20,6 +20,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.LockMode;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Example;
 
@@ -30,25 +31,18 @@ import org.hibernate.criterion.Example;
 public class DataSourceHibernate<T extends DataEntity> implements DataSource<T> {
 
     private Class<T> persistentClass;
-
     private Session session;
+
     public Class<T> getPersistentClass() {
         return persistentClass;
     }
 
     public DataSourceHibernate() {
-        this.persistentClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-    }
-
-    @SuppressWarnings("unchecked")
-    public void setSession(Session s) {
-        this.session = s;
+        this.persistentClass = (Class<T>) ((ParameterizedType) getClass().getGenericInterfaces()[0]).getActualTypeArguments()[0].getClass();
     }
 
     protected Session getSession() {
-        if (session == null) {
-            throw new IllegalStateException("Session has not been set on DAO before usage");
-        }
+          session=HibernateUtil.getSessionFactory().getCurrentSession();
         return session;
     }
 
@@ -86,5 +80,28 @@ public class DataSourceHibernate<T extends DataEntity> implements DataSource<T> 
             crit.add(c);
         }
         return crit.list();
+    }
+
+    @Override
+    public T makePersistent(T entity) {
+        Transaction tx = getSession().beginTransaction();
+        getSession().saveOrUpdate(entity);
+        tx.commit();
+        return entity;
+    }
+
+    @Override
+    public void makeTransient(T entity) {
+        Transaction tx = getSession().beginTransaction();
+        getSession().delete(entity);
+        tx.commit();
+    }
+
+    public void flush() {
+        getSession().flush();
+    }
+
+    public void clear() {
+        getSession().clear();
     }
 }
