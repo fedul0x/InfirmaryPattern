@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jSeparator1" min="-2" pref="708" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="middleNameTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lastNameTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="firstNameTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="birthdayDateFormattedTextField" max="32767" attributes="0"/>
+                          <Component id="registrationDateFormattedTextField" max="32767" attributes="0"/>
+                          <Component id="sexComboBox" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="mobilePhoneTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="stateTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="townTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="districtTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="streetTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="buildingTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="flatTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="homeTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="workplaceTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="homePhoneTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="workPhoneTextField" alignment="1" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="medicalInsuranceNumberTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="contractTermEndingFormattedTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="contractValidityBeginningFormattedTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="medicalCardNumberTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="medicalCardDateFormattedTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="medicalInsuranceSeriesTextField" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="addEntityButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="firstNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="stateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="middleNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="townTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="medicalInsuranceSeriesTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="medicalInsuranceNumberTextField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lastNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="districtTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="birthdayDateFormattedTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="registrationDateFormattedTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="sexComboBox" min="-2" pref="18" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="streetTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="buildingTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="flatTextField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="homeTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="workplaceTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="homePhoneTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="mobilePhoneTextField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="contractTermEndingFormattedTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="contractValidityBeginningFormattedTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="medicalCardNumberTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="medicalCardDateFormattedTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="addEntityButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="workPhoneTextField" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="firstNameTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="firstNameTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="middleNameTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="middleNameTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="lastNameTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="lastNameTextField"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="birthdayDateFormattedTextField">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DateFormat date = new SimpleDateFormat(&quot;dd MMMM yyyy, EEEE&quot;);&#xa;DateFormatter formatter = new DateFormatter(date);&#xa;formatter.setAllowsInvalid(false);&#xa;formatter.setOverwriteMode(true);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="birthdayDateFormattedTextField.setColumns(15);&#xa;birthdayDateFormattedTextField.setValue(new Date());"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="registrationDateFormattedTextField">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="registrationDateFormattedTextField.setColumns(15);&#xa;registrationDateFormattedTextField.setValue(new Date());"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="sexComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new ru.fedul0x.ip.view.component.SexComboBoxModel()" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sexComboBoxActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="stateTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="stateTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="townTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="townTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="districtTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="districtTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="streetTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="streetTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="buildingTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="buildingTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="flatTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="flatTextField"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="flatTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="homeTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="homeTextField"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="workplaceTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="workplaceTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="homePhoneTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="homePhoneTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="mobilePhoneTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="mobilePhoneTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="workPhoneTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="workPhoneTextField"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="workPhoneTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="medicalInsuranceNumberTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="medicalInsuranceNumberTextField"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalInsuranceNumberTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="medicalInsuranceSeriesTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="medicalInsuranceSeriesTextField"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="contractTermEndingFormattedTextField">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format subtype="0" type="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="contractTermEndingFormattedTextField"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DateFormat date = new SimpleDateFormat(&quot;dd MMMM yyyy, EEEE&quot;);&#xa;DateFormatter formatter = new DateFormatter(date);&#xa;formatter.setAllowsInvalid(false);&#xa;formatter.setOverwriteMode(true);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="birthdayDateFormattedTextField.setColumns(15);&#xa;birthdayDateFormattedTextField.setValue(new Date());"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="contractValidityBeginningFormattedTextField">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format subtype="0" type="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="contractValidityBeginningFormattedTextField"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="registrationDateFormattedTextField.setColumns(15);&#xa;registrationDateFormattedTextField.setValue(new Date());"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="medicalCardNumberTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="medicalCardNumberTextField"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalCardNumberTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="medicalCardDateFormattedTextField">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+          <Format subtype="0" type="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="medicalCardDateFormattedTextField"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalCardDateFormattedTextFieldActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(formatter)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DateFormat date = new SimpleDateFormat(&quot;dd MMMM yyyy, EEEE&quot;);&#xa;DateFormatter formatter = new DateFormatter(date);&#xa;formatter.setAllowsInvalid(false);&#xa;formatter.setOverwriteMode(true);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="birthdayDateFormattedTextField.setColumns(15);&#xa;birthdayDateFormattedTextField.setValue(new Date());"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="addEntityButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="addEntityButton"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addEntityButtonActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

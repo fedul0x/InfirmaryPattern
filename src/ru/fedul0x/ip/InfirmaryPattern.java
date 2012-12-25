@@ -1,6 +1,17 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2012 Ivashin Alexey <ivashin.alexei@gmail.com>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package ru.fedul0x.ip;
 
@@ -9,6 +20,7 @@ import ru.fedul0x.ip.dataaccess.HibernateUtil;
 import org.hibernate.classic.Session;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
 import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
+import ru.fedul0x.ip.view.PatienAddFrame;
 
 /**
  *
@@ -20,17 +32,13 @@ public class InfirmaryPattern {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        StaffPosition staffPositionChiefDoctor = new StaffPosition(100L, "Главный врач", "Главный врач");
-        DataSourceHibernate<StaffPosition> sf = new DataSourceHibernate<StaffPosition>();
-        sf.makePersistent(staffPositionChiefDoctor);
-        sf.makeTransient(staffPositionChiefDoctor);
-        
-//
-//        Session openSession = HibernateUtil.getSessionFactory().openSession();
-//        openSession.beginTransaction();
-//        for (StaffPosition staffPosition : StaffPosition.AllStaffPositions) {
-//            openSession.saveOrUpdate(staffPosition);
-//        }
-//        openSession.getTransaction().commit();
+//        StaffPosition staffPositionChiefDoctor = new StaffPosition(100L, "Главный врач", "Главный врач");
+//        DataSourceHibernate<StaffPosition> sf = new DataSourceHibernate<StaffPosition>();
+//        sf.makePersistent(staffPositionChiefDoctor);
+//        sf.makeTransient(staffPositionChiefDoctor);
+
+        PatienAddFrame frame = new PatienAddFrame();
+        frame.setVisible(true);
+
     }
 }
