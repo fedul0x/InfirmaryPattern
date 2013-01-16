@@ -15,10 +15,12 @@
  */
 package ru.fedul0x.ip;
 
+import java.util.List;
 import ru.fedul0x.ip.dataaccess.dataobject.Agent;
 import ru.fedul0x.ip.dataaccess.HibernateUtil;
 import org.hibernate.classic.Session;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
+import ru.fedul0x.ip.dataaccess.dataobject.Staff;
 import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 import ru.fedul0x.ip.view.PatienAddFrame;
 
@@ -36,6 +38,13 @@ public class InfirmaryPattern {
 //        DataSourceHibernate<StaffPosition> sf = new DataSourceHibernate<StaffPosition>();
 //        sf.makePersistent(staffPositionChiefDoctor);
 //        sf.makeTransient(staffPositionChiefDoctor);
+        DataSourceHibernate<Staff> dsh = new DataSourceHibernate<>();
+        List<Staff> list = dsh.findAll();
+        System.out.println("---------------------------------");
+        for(Staff staff: list) {
+            System.out.println(staff.getLastName());
+        }
+        System.out.println(list.size());
         
         
         

@@ -32,6 +32,7 @@ public class DataSourceHibernate<T extends DataEntity> implements DataSource<T> 
 
     private Class<T> persistentClass;
     private Session session;
+    private Transaction transaction;
 
     public Class<T> getPersistentClass() {
         return persistentClass;
@@ -42,19 +43,20 @@ public class DataSourceHibernate<T extends DataEntity> implements DataSource<T> 
     }
 
     protected Session getSession() {
-          session=HibernateUtil.getSessionFactory().getCurrentSession();
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
         return session;
     }
 
     @Override
     public T findById(Long id, boolean lock) {
         T entity;
+        beginTransaction();
         if (lock) {
             entity = (T) getSession().load(getPersistentClass(), id, LockMode.UPGRADE);
         } else {
             entity = (T) getSession().load(getPersistentClass(), id);
         }
-
+        commitTransaction();
         return entity;
     }
 
@@ -65,43 +67,60 @@ public class DataSourceHibernate<T extends DataEntity> implements DataSource<T> 
 
     @Override
     public List<T> findByExample(T exampleInstance, String[] excludeProperty) {
+        beginTransaction();
         Criteria crit = getSession().createCriteria(getPersistentClass());
         Example example = Example.create(exampleInstance);
         for (String exclude : excludeProperty) {
             example.excludeProperty(exclude);
         }
         crit.add(example);
+        commitTransaction();
         return crit.list();
     }
 
     protected List<T> findByCriteria(Criterion... criterion) {
+        beginTransaction();
         Criteria crit = getSession().createCriteria(getPersistentClass());
         for (Criterion c : criterion) {
             crit.add(c);
         }
-        return crit.list();
+        List<T> result = crit.list();
+        commitTransaction();
+        return result;
     }
 
     @Override
     public T makePersistent(T entity) {
-        Transaction tx = getSession().beginTransaction();
+        beginTransaction();
         getSession().saveOrUpdate(entity);
-        tx.commit();
+        commitTransaction();
         return entity;
     }
 
     @Override
     public void makeTransient(T entity) {
-        Transaction tx = getSession().beginTransaction();
+        beginTransaction();
         getSession().delete(entity);
-        tx.commit();
+        commitTransaction();
     }
 
     public void flush() {
+        beginTransaction();
         getSession().flush();
+        commitTransaction();
     }
 
     public void clear() {
+        beginTransaction();
         getSession().clear();
+        commitTransaction();
+    }
+
+    private void beginTransaction() {
+        transaction = getSession().beginTransaction();
+    }
+
+    private void commitTransaction() {
+        transaction.commit();
     }
 }

@@ -1,0 +1,84 @@
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (1, 15, 'Великий', 'Александр', 'Викторович', null, null, null, null, null, null, null, null, null, 6.59999990463257, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (2, 3, 'Глазкова', 'Людмила', 'Анатольевна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (3, 4, 'Гостева', 'Елена', 'Владимировна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (4, 3, 'Помогалова', 'Галина', 'Васильевна', null, null, null, null, null, null, null, null, null, 0, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (5, 16, 'Демидова', 'Наталья', 'Александровна', null, 'г.Воронеж,  ул. Ленинградская д.55а кв.123 ', '2099', '200845',  '10.02.2000 г. Левобережным РОВД г.Воронежа', '1975-06-05', '03907904065', null, null, 7.80000019073486, 0.5);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (6, 3, 'Соловьева', 'Наталья', 'Владимировна', null, 'г.Воронеж, ул.Ленинградская д.13 кв.53', '2003', '939958', 'Левобережным РУВД г.Воронежа 18.08.2003 г', '1966-03-30', '03519208336', null, null, 6.59999990463257, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (7, 5, 'Грибанова', 'Валерия', 'Александровна', null, 'г. Воронеж, пр-т Труда, д.44 к.24', '2005', '621857', 'УВД Коминтерновского Района г.Воронеж', '1985-10-08', '12414473021', '18/11Ф', '15.08.2011', 6, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (8, 17, 'Черникова', 'Татьяна', 'Михайловна', null, 'г. Воронеж, ул. Мопра, д.15 кв. 235 ', '2005', '642101', 'УВД Левобережного р-на г. Воронежа', '1960-05-31', '03646368772', '28/11ФЛ', '01.08.2011', 6, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (9, 2, 'Соловьева', 'Наталья', 'Владимировна', null, 'г.Воронеж, ул.Ленинградская д.13 кв.53', '2003', '939958 ', 'Левобережным РУВД г.Воронежа 18.08.2003 г', '1966-03-30', '03519208336', null, null, 6.59999990463257, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (10, 18, 'Качурина', 'Алла', 'Никитична', null, 'г.Воронеж, ул.Костромская д.12/2 кв.42', '2004', '058365', '03.11.2003 г., Левобережным РУВД г.Воронежа', '1971-12-04', '03508924856', '15/11ФЛ', '01.03.2011', 6.59999990463257, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (11, 19, 'Русакова', 'Елена', 'Сергеевна', null,  'пгт Сомово, ул. Конституции, д.32', '2003', '902971', 'Железнодорожным РОВД г. Воронежа, 22.07.2003', '1978-07-23', '02861349862','31/ФЛ', '05.12.2011', 6, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (12, 4, 'Широчина', 'Эльвира', 'Александровна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (13, 4, 'Занина', 'Людмила', 'Николаевна', null, 'г. Воронеж, ул. Димитрова, д. 70 к. 29', '2005', '609337', '27.02.2006 УВД Левобережного Района г. Воронеж', '1960-09-19', '03541488447', '20/11 Ф', '26.09.2011', 6, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (14, 20, 'Бабайцева', 'Оксана', 'Михайловна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (15, 4, 'Токовенко', 'Элеонора', 'Геннадьевна', null, 'г.Воронеж, ул.Г.Лизюкова, д.8 кв.121', '2009', '199860', 'УФМС России по Воро.обл. в Коминтерновском р-не 27.02.2006', '1973-12-24', '04897126906', '33/12 ФЛ', '05.03.2012', 6, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (16, 19, 'Осипова', 'Ирина', 'Юрьевна', null, 'г.Воронеж, ул.Черняховского, д.1 кв.217', '2005', '696137', 'ОВД Ленинского р-на г.Воронежа 26.09.2006', '1961-05-01', '03541463431',  '34/12 ФЛ', '07.03.2012', 6, 1);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (17, 21, 'Нечаева', 'Светлана', 'Васильева', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (18, 17, 'Андрианова', 'Людмила', 'Ивановна', null, 'г.Воронеж, ул.Пирогова , д.58 кв.5', '2001', '464389', '14.05.2001 Советским РОВД г.Воронежа', '1949-07-05', '03515285132', '35/12 ФЛ', '15.03.2012', 6, 1); 
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (19, 22, 'Доценко', 'Елена', 'Ивановна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (20, 23, 'Корчагин', 'Михаил', 'Юрьевич', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (21, 2, 'Есипенко', 'Нина', 'Ивановна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (22, 5, 'Прохорова', 'Карина', 'Игоревна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (23, 16, 'Демченко', 'Матвей', 'Владимирович', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (24, 24, 'Перевозчикова', 'Наталья', 'Викторовна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (25, 5, 'Гализин', 'Владимир', 'Тихонович', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (26, 5, 'Перепелица', 'Наталья', 'Вячеславовна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (27, 4, 'Губарева', 'Юлия', 'Алексеевна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (28, 22, 'Горяйнова', 'Марина', 'Александровна', null, null, null, null, null, null, null, null, null, 0, 0);
+INSERT INTO public.staff ( id, staff_position_id, last_name, first_name, middle_name, specialisation,  address, passport_series, passport_number, passport_issued_by, birthday_date, individual_personal_account_insurance_number,  contract_number,  contract_date,  norm_hours,  rate) 
+VALUES (29, 5, 'Авдеева', 'Ольга', 'Николаевна', null, null, null, null, null, null, null, null, null, 0, 0);
+
+0;'Главный врач'
+1;'Заместитель главного врача'
+2;'Эндокринолог'
+3;'Терапевт'
+4;'Врач УЗИ'
+5;'Гинеколог'
+6;'Терапевт-ВНС'
+7;'Консультант-эндокринолог'
+8;'Старшая медицинская сестра'
+9;'Медицинская сестра'
+10;'Бухгалтер'
+11;'Администратор-кассир'
+12;'Уборщица'
+13;'Системный администратор'
+14;'Программист'
+15;'Эндокринолог стационара'
+16 Врач ФД
+17 'Кардиолог'
+18 Мамолог
+19 врач невролог
+20 'Профпатолог'
+21 врач лаборант
+22 Дерматолог
+23 уролог
+34 Врач лор

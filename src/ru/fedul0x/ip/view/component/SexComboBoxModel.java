@@ -42,7 +42,6 @@ public class SexComboBoxModel<String> implements ComboBoxModel<String> {
 
     @Override
     public Object getSelectedItem() {
-//        return 0;
         String result = (String) "Женский";
         if (selectedItem) {
             result = (String) "Мужской";
