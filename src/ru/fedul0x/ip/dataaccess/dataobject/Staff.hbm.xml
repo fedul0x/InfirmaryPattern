@@ -37,6 +37,15 @@
     <property name="birthdayDate" type="date">
       <column length="13" name="birthday_date"/>
     </property>
+    <property name="homePhone" type="string">
+      <column name="home_phone"/>
+    </property>
+    <property name="mobilePhone" type="string">
+      <column name="mobile_phone"/>
+    </property>
+    <property name="workPhone" type="string">
+      <column name="work_phone"/>
+    </property>
     <property name="individualPersonalAccountInsuranceNumber" type="string">
       <column length="11" name="individual_personal_account_insurance_number"/>
     </property>
