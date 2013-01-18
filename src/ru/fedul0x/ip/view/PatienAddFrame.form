@@ -250,7 +250,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="medicalInsuranceNumberTextField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="medicalInsuranceNumberTextField"/>
+        <Property name="text" type="java.lang.String" value="medical_20TextField"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalInsuranceNumberTextFieldActionPerformed"/>
@@ -258,8 +258,11 @@
     </Component>
     <Component class="javax.swing.JTextField" name="medicalInsuranceSeriesTextField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="medicalInsuranceSeriesTextField"/>
+        <Property name="text" type="java.lang.String" value="10extField"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalInsuranceSeriesTextFieldActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="contractTermEndingFormattedTextField">
       <Properties>
@@ -285,7 +288,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="medicalCardNumberTextField">
       <Properties>
-        <Property name="text" type="java.lang.String" value="medicalCardNumberTextField"/>
+        <Property name="text" type="java.lang.String" value="medical_20TextField"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="medicalCardNumberTextFieldActionPerformed"/>

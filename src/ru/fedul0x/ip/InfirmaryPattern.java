@@ -24,6 +24,7 @@ import ru.fedul0x.ip.dataaccess.dataobject.Patient;
 import ru.fedul0x.ip.dataaccess.dataobject.Staff;
 import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 import ru.fedul0x.ip.view.PatienAddFrame;
+import ru.fedul0x.ip.view.StaffPositionAddFrame;
 
 /**
  *
@@ -62,6 +63,7 @@ public class InfirmaryPattern {
 
         PatienAddFrame frame = new PatienAddFrame();
         frame.setVisible(true);
-
+        StaffPositionAddFrame frame2 = new StaffPositionAddFrame();
+        frame2.setVisible(true);
     }
 }

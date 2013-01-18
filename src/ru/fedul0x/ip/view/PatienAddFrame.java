@@ -22,6 +22,8 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFormattedTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.DateFormatter;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
 import ru.fedul0x.ip.dataaccess.DataSourceRepository;
@@ -38,6 +40,19 @@ public class PatienAddFrame extends javax.swing.JFrame {
      * Creates new form PatienAddFrame
      */
     public PatienAddFrame() {
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+//            UIManager.setLookAndFeel("javax.swing.plaf.multi.MultiLookAndFeel");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         initComponents();
     }
 
@@ -139,14 +154,19 @@ public class PatienAddFrame extends javax.swing.JFrame {
             }
         });
 
-        medicalInsuranceNumberTextField.setText("medicalInsuranceNumberTextField");
+        medicalInsuranceNumberTextField.setText("medical_20TextField");
         medicalInsuranceNumberTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 medicalInsuranceNumberTextFieldActionPerformed(evt);
             }
         });
 
-        medicalInsuranceSeriesTextField.setText("medicalInsuranceSeriesTextField");
+        medicalInsuranceSeriesTextField.setText("10extField");
+        medicalInsuranceSeriesTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                medicalInsuranceSeriesTextFieldActionPerformed(evt);
+            }
+        });
 
         contractTermEndingFormattedTextField.setColumns(15);
         contractTermEndingFormattedTextField.setValue(new Date());
@@ -156,7 +176,7 @@ public class PatienAddFrame extends javax.swing.JFrame {
         contractValidityBeginningFormattedTextField.setValue(new Date());
         contractValidityBeginningFormattedTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MMMM yyyy, EEEE"))));
 
-        medicalCardNumberTextField.setText("medicalCardNumberTextField");
+        medicalCardNumberTextField.setText("medical_20TextField");
         medicalCardNumberTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 medicalCardNumberTextFieldActionPerformed(evt);
@@ -357,6 +377,10 @@ public class PatienAddFrame extends javax.swing.JFrame {
     private void medicalCardDateFormattedTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalCardDateFormattedTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_medicalCardDateFormattedTextFieldActionPerformed
+
+    private void medicalInsuranceSeriesTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalInsuranceSeriesTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_medicalInsuranceSeriesTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
