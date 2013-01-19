@@ -33,7 +33,7 @@ public class DataSourceRepository {
     public static DataSourceHibernate<? extends DataEntity> getDataSource(Class type){
         System.out.println(type.getGenericInterfaces()[0]);
 //        DataSourceHibernate<type> dsh = new DataSourceHibernate<type>();
-        DataSourceHibernate<Patient> dsh = new DataSourceHibernate<Patient>();
+        DataSourceHibernate<Patient> dsh = new DataSourceHibernate<Patient>(Patient.class);
         return (DataSourceHibernate<Patient>)dsh;
     }
     

@@ -15,10 +15,13 @@
  */
 package ru.fedul0x.ip.view;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
+import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 
 /**
  *
@@ -26,22 +29,13 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class StaffPositionAddFrame extends javax.swing.JFrame {
 
+    final Logger logger = LoggerFactory.getLogger(StaffPositionAddFrame.class);
+    
+
     /**
      * Creates new form StaffPositionAddFrame
      */
     public StaffPositionAddFrame() {
-          try {
-//            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-            UIManager.setLookAndFeel("javax.swing.plaf.multi.MultiLookAndFeel");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
         initComponents();
     }
 
@@ -61,6 +55,11 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         addEntityButton.setText("addEntityButton");
+        addEntityButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addEntityButtonActionPerformed(evt);
+            }
+        });
 
         staffPositionNameTextField.setText("staffPositionNameTextField");
 
@@ -93,6 +92,24 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addEntityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEntityButtonActionPerformed
+        // TODO add your handling code here:
+        StaffPosition sp = new StaffPosition();
+        sp.setId(100L);
+        sp.setStaffPositionName(staffPositionNameTextField.getText());
+        sp.setDescription(descriptionTextField.getText());
+        DataSourceHibernate<StaffPosition> dsh = new DataSourceHibernate<>(StaffPosition.class);
+        dsh.makePersistent(sp);
+        List<StaffPosition> list = dsh.findAll();
+        for (StaffPosition item : list) {
+            System.out.print(item.getStaffPositionName());
+        }
+        System.out.print(list.size());
+
+        StaffPosition one = dsh.findById(1L, true);
+        System.out.print(one.getDescription());
+    }//GEN-LAST:event_addEntityButtonActionPerformed
 
     /**
      * @param args the command line arguments

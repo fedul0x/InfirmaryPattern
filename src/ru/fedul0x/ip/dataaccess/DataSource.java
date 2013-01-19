@@ -15,22 +15,24 @@
  */
 package ru.fedul0x.ip.dataaccess;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
- * Methods for data manipulation with data objects
+ * Methods for data manipulation with persistent and transient data objects 
  *
  * @author Ivashin Alexey <ivashin.alexei@gmail.com>
  */
-public interface DataSource<T extends DataEntity> {
+public abstract class DataSource<T extends DataEntity> {
 
-    T findById(Long id, boolean lock);
+    public abstract T findById(Long id, boolean lock);
 
-    List<T> findAll();
+    public abstract List<T> findAll();
 
-    List<T> findByExample(T exampleInstance, String[] excludeProperty);
+    public abstract List<T> findByExample(T exampleInstance, String[] excludeProperty);
 
-    T makePersistent(T entity);
+    public abstract T makePersistent(T entity);
 
-    void makeTransient(T entity);
+    public abstract void makeTransient(T entity);
+
 }

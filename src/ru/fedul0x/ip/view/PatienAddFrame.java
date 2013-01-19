@@ -25,6 +25,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.DateFormatter;
+import org.slf4j.LoggerFactory;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
 import ru.fedul0x.ip.dataaccess.DataSourceRepository;
 import ru.fedul0x.ip.dataaccess.dataobject.Patient;
@@ -36,23 +37,13 @@ import ru.fedul0x.ip.view.component.SexComboBoxModel;
  */
 public class PatienAddFrame extends javax.swing.JFrame {
 
+    final org.slf4j.Logger logger = LoggerFactory.getLogger(StaffPositionAddFrame.class);
+
     /**
      * Creates new form PatienAddFrame
      */
     public PatienAddFrame() {
-        try {
-            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-//            UIManager.setLookAndFeel("javax.swing.plaf.multi.MultiLookAndFeel");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(PatienAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+
         initComponents();
     }
 
@@ -96,6 +87,7 @@ public class PatienAddFrame extends javax.swing.JFrame {
         addEntityButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Пациент");
 
         firstNameTextField.setText("firstNameTextField");
 
@@ -345,9 +337,9 @@ public class PatienAddFrame extends javax.swing.JFrame {
             patient.setMiddleName(middleNameTextField.getText());
             patient.setBirthdayDate(bd);
             patient.setRegistrationDate(rd);
-    //TODO correct this error
+            //TODO correct this error
             patient.setSex(false);
-            patient.setSex(((SexComboBoxModel)sexComboBox.getModel()).getValue());
+            patient.setSex(((SexComboBoxModel) sexComboBox.getModel()).getValue());
             patient.setState(stateTextField.getText());
             patient.setTown(townTextField.getText());
             patient.setDistrict(districtTextField.getText());
@@ -366,7 +358,7 @@ public class PatienAddFrame extends javax.swing.JFrame {
             patient.setMedicalCardNumber(medicalCardNumberTextField.getText());
             patient.setMedicalCardDate(mcd);
 //            DataSourceRepository.getDataSource(Patient.class).makePersistent(patient);
-            DataSourceHibernate<Patient> dsh = new DataSourceHibernate<Patient>();
+            DataSourceHibernate<Patient> dsh = new DataSourceHibernate<Patient>(Patient.class);
             dsh.makePersistent(patient);
             dsh.flush();
         } catch (ParseException ex) {
