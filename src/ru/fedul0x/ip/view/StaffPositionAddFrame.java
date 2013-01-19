@@ -15,13 +15,16 @@
  */
 package ru.fedul0x.ip.view;
 
+import java.util.ArrayList;
 import java.util.List;
+import ru.fedul0x.ip.view.component.model.RowTableModel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
 import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
+import ru.fedul0x.ip.view.component.model.HibernateRowTablModel;
 
 /**
  *
@@ -30,7 +33,6 @@ import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 public class StaffPositionAddFrame extends javax.swing.JFrame {
 
     final Logger logger = LoggerFactory.getLogger(StaffPositionAddFrame.class);
-    
 
     /**
      * Creates new form StaffPositionAddFrame
@@ -51,6 +53,8 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         addEntityButton = new javax.swing.JButton();
         staffPositionNameTextField = new javax.swing.JTextField();
         descriptionTextField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        staffPositionTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +69,19 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
 
         descriptionTextField.setText("descriptionTextField");
 
+        staffPositionTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(staffPositionTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,18 +93,23 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
                         .addComponent(descriptionTextField)
                         .addComponent(staffPositionNameTextField))
                     .addComponent(addEntityButton))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(staffPositionNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(descriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addEntityButton)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(staffPositionNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(descriptionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addEntityButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,6 +131,17 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
 
         StaffPosition one = dsh.findById(1L, true);
         System.out.print(one.getDescription());
+
+        List<StaffPosition> dataList = dsh.findAll();
+        List<String> columns = new ArrayList<>();
+        columns.add("id");
+        columns.add("sp");
+        columns.add("description");
+
+        HibernateRowTablModel<StaffPosition> hrtm = new HibernateRowTablModel(dataList, columns, StaffPosition.class);
+        staffPositionTable.setModel(hrtm);
+//        staffPositionTable.re
+        
     }//GEN-LAST:event_addEntityButtonActionPerformed
 
     /**
@@ -150,6 +183,8 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addEntityButton;
     private javax.swing.JTextField descriptionTextField;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField staffPositionNameTextField;
+    private javax.swing.JTable staffPositionTable;
     // End of variables declaration//GEN-END:variables
 }
