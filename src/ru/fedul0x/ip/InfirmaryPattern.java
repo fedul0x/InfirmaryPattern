@@ -15,17 +15,8 @@
  */
 package ru.fedul0x.ip;
 
-import java.util.List;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import ru.fedul0x.ip.dataaccess.dataobject.Agent;
-import ru.fedul0x.ip.dataaccess.HibernateUtil;
-import org.hibernate.classic.Session;
-import org.slf4j.LoggerFactory;
-import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
-import ru.fedul0x.ip.dataaccess.dataobject.Patient;
-import ru.fedul0x.ip.dataaccess.dataobject.Staff;
-import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 import ru.fedul0x.ip.view.PatienAddFrame;
 import ru.fedul0x.ip.view.StaffPositionAddFrame;
 
@@ -35,38 +26,21 @@ import ru.fedul0x.ip.view.StaffPositionAddFrame;
  */
 public class InfirmaryPattern {
 
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(StaffPositionAddFrame.class);
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-//        StaffPosition staffPositionChiefDoctor = new StaffPosition(100L, "Главный врач", "Главный врач");
-//        DataSourceHibernate<StaffPosition> sf = new DataSourceHibernate<StaffPosition>();
-//        sf.makePersistent(staffPositionChiefDoctor);
-//        sf.makeTransient(staffPositionChiefDoctor);
-
-//        DataSourceHibernate<Staff> dsh = new DataSourceHibernate<Staff>();
-//        List<Staff> list = dsh.findAll();
-//        System.out.println("---------------------------------");
-//        for(Staff staff: list) {
-//            System.out.println(staff.getLastName());
-//        }
-//        System.out.println(list.size());
-
-//        DataSourceHibernate<Patient> dsh1 = new DataSourceHibernate<>();
-//        List<Patient> list1 = dsh1.findAll();
-//        System.out.println("---------------------------------");
-//        for(Patient patient: list1) {
-//            System.out.println(patient.getLastName());
-//        }
-//        System.out.println(list1.size());
-
-        String lookAndFeel = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
+    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         try {
-            UIManager.setLookAndFeel(lookAndFeel);
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-            logger.error("Can't install {} look and feel class", lookAndFeel);
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(InfirmaryPattern.class.getName()).
+                    log(java.util.logging.Level.WARNING, "Can't install look and feel class", ex);
+
         }
 
         PatienAddFrame frame = new PatienAddFrame();
