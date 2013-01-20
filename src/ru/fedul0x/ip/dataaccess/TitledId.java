@@ -21,32 +21,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Repeat Column interface with title field for JTable column names storing
+ *
  * @author Ivashin Alexey <ivashin.alexei@gmail.com>
  */
 @Target(value = {ElementType.METHOD, ElementType.FIELD})
 @Retention(value = RetentionPolicy.RUNTIME)
-public @interface TitledColumn {
-
-    public String name() default "";
-
-    public boolean unique() default false;
-
-    public boolean nullable() default true;
-
-    public boolean insertable() default true;
-
-    public boolean updatable() default true;
-
-    public String columnDefinition() default "";
-
-    public String table() default "";
-
-    public int length() default 255;
-
-    public int precision() default 0;
-
-    public int scale() default 0;
+public @interface TitledId {
 
     public String title() default "";
 }

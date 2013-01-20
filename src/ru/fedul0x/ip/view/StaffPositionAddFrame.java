@@ -133,12 +133,7 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         StaffPosition one = dsh.findById(1L, true);
         System.out.print(one.getDescription());
 
-        HibernateRowTablModel<StaffPosition> hrtm = null;
-        try {
-            hrtm = new HibernateRowTablModel(StaffPosition.class);
-        } catch (NoSuchMethodException ex) {
-            java.util.logging.Logger.getLogger(StaffPositionAddFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        HibernateRowTablModel<StaffPosition> hrtm =  new HibernateRowTablModel(StaffPosition.class);
         staffPositionTable.setModel(hrtm);
     }//GEN-LAST:event_addEntityButtonActionPerformed
 
