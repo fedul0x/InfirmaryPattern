@@ -17,6 +17,7 @@ package ru.fedul0x.ip.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import ru.fedul0x.ip.view.component.model.RowTableModel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -132,16 +133,13 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         StaffPosition one = dsh.findById(1L, true);
         System.out.print(one.getDescription());
 
-        List<StaffPosition> dataList = dsh.findAll();
-        List<String> columns = new ArrayList<>();
-        columns.add("id");
-        columns.add("sp");
-        columns.add("description");
-
-        HibernateRowTablModel<StaffPosition> hrtm = new HibernateRowTablModel(dataList, columns, StaffPosition.class);
+        HibernateRowTablModel<StaffPosition> hrtm = null;
+        try {
+            hrtm = new HibernateRowTablModel(StaffPosition.class);
+        } catch (NoSuchMethodException ex) {
+            java.util.logging.Logger.getLogger(StaffPositionAddFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         staffPositionTable.setModel(hrtm);
-//        staffPositionTable.re
-        
     }//GEN-LAST:event_addEntityButtonActionPerformed
 
     /**
