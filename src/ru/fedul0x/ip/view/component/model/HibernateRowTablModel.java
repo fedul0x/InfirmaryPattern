@@ -69,22 +69,16 @@ public class HibernateRowTablModel<T extends DataEntity> extends RowTableModel<T
             columns.add(column);
             try {
                 methods.add(getMethod(key));
+//                columnClasses[column.length() - 1] = getMethod(key).getReturnType();
             } catch (NoSuchMethodException ex) {
                 Logger.getLogger(HibernateRowTablModel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         setDataAndColumnNames(data, columns);
-    }
+        for (int i = 0; i < methods.size(); i++) {
+            columnClasses[i] = methods.get(i).getReturnType();
 
-    @Override
-    public String getValueAt(int rowIndex, int columnIndex) {
-        String result = "";
-        try {
-            result = (String) methods.get(columnIndex).invoke(modelData.get(rowIndex));
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
-            Logger.getLogger(HibernateRowTablModel.class.getName()).log(Level.WARNING, null, ex);
         }
-        return result;
     }
 
     private Map<Field, Method> getFieldsAndMethods(Class<?> clazz) {
@@ -95,22 +89,14 @@ public class HibernateRowTablModel<T extends DataEntity> extends RowTableModel<T
         try {
             fields.add(clazz.getSuperclass().getDeclaredField("id"));
         } catch (NoSuchFieldException | SecurityException ex) {
-            
         }
-        for (Field field : fields){
-//        for (Field field : clazz.getFields()){
+        for (Field field : fields) {
             try {
                 method = getMethod(field);
             } catch (NoSuchMethodException ex) {
                 Logger.getLogger(getClass().getName()).log(Level.WARNING, null, ex);
                 continue;
             }
-//            if (field.getAnnotation(TitledColumn.class) != null
-//                    || field.getAnnotation(TitledId.class) != null
-//                    || method.getAnnotation(TitledColumn.class) != null
-//                    || method.getAnnotation(TitledId.class) != null) {
-//                
-//            }
             result.put(field, method);
         }
         return result;
@@ -125,5 +111,17 @@ public class HibernateRowTablModel<T extends DataEntity> extends RowTableModel<T
 
     private String uppercase(String str) {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        Object result;
+        try {
+            result = methods.get(columnIndex).invoke(modelData.get(rowIndex));
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+            result = (Object) "";
+            Logger.getLogger(HibernateRowTablModel.class.getName()).log(Level.WARNING, null, ex);
+        }
+        return result;
     }
 }

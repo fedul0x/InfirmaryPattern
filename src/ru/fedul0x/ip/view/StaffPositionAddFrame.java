@@ -40,6 +40,8 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
      */
     public StaffPositionAddFrame() {
         initComponents();
+        HibernateRowTablModel<StaffPosition> hrtm =  new HibernateRowTablModel(StaffPosition.class);
+        staffPositionTable.setModel(hrtm);
     }
 
     /**
@@ -133,8 +135,7 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         StaffPosition one = dsh.findById(1L, true);
         System.out.print(one.getDescription());
 
-        HibernateRowTablModel<StaffPosition> hrtm =  new HibernateRowTablModel(StaffPosition.class);
-        staffPositionTable.setModel(hrtm);
+        
     }//GEN-LAST:event_addEntityButtonActionPerformed
 
     /**
@@ -165,6 +166,7 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         /*
          * Create and display the form
          */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             @Override
