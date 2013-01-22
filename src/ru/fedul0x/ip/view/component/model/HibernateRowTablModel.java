@@ -25,6 +25,7 @@ import ru.fedul0x.ip.dataaccess.DataEntity;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
 import ru.fedul0x.ip.dataaccess.TitledColumn;
 import ru.fedul0x.ip.dataaccess.TitledId;
+import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 
 /**
  * Model for JTable with hibernate data source
@@ -66,6 +67,19 @@ public class HibernateRowTablModel<T extends DataEntity> extends RowTableModel<T
                     column = item;
                 }
             }
+            //TODO REWRITE THIS
+            Class cond;
+            try {
+                cond = getMethod(key).getReturnType().getSuperclass();
+            } catch (NoSuchMethodException ex) {
+                continue;
+            }
+            if ((cond == DataEntity.class)
+                    || (cond == Set.class)) {
+                continue;
+            }
+
+            //TODO REWRITE THIS
             columns.add(column);
             try {
                 methods.add(getMethod(key));

@@ -24,6 +24,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
+import ru.fedul0x.ip.dataaccess.dataobject.Staff;
 import ru.fedul0x.ip.dataaccess.dataobject.StaffPosition;
 import ru.fedul0x.ip.view.component.model.HibernateRowTablModel;
 
@@ -40,7 +41,7 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
      */
     public StaffPositionAddFrame() {
         initComponents();
-        HibernateRowTablModel<StaffPosition> hrtm =  new HibernateRowTablModel(StaffPosition.class);
+        HibernateRowTablModel<Staff> hrtm =  new HibernateRowTablModel(Staff.class);
         staffPositionTable.setModel(hrtm);
     }
 
@@ -135,6 +136,7 @@ public class StaffPositionAddFrame extends javax.swing.JFrame {
         StaffPosition one = dsh.findById(1L, true);
         System.out.print(one.getDescription());
 
+        //        HibernateRowTablModel<StaffPosition> hrtm =  new HibernateRowTablModel(StaffPosition.class);
         
     }//GEN-LAST:event_addEntityButtonActionPerformed
 

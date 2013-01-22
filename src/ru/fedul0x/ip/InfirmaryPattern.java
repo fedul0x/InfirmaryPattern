@@ -15,8 +15,11 @@
  */
 package ru.fedul0x.ip;
 
+import java.util.List;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import ru.fedul0x.ip.dataaccess.DataSourceHibernate;
+import ru.fedul0x.ip.dataaccess.dataobject.Staff;
 import ru.fedul0x.ip.view.PatienAddFrame;
 import ru.fedul0x.ip.view.StaffPositionAddFrame;
 
@@ -43,6 +46,12 @@ public class InfirmaryPattern {
 
         }
 
+        DataSourceHibernate<Staff> dsh= new DataSourceHibernate<>(Staff.class);
+        List<Staff> list = dsh.findAll();
+        for (Staff item: list)
+        {
+            System.out.println(item.getLastName());
+        }
         PatienAddFrame frame = new PatienAddFrame();
         frame.setVisible(true);
         StaffPositionAddFrame frame2 = new StaffPositionAddFrame();
